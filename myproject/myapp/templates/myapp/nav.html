@@ -1,0 +1,49 @@
+{% load static %}
+{% if request.user.is_authenticated %}
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <div id="mySidenav" class="sidenav">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+       <a href="{% url 'index-page' %}">Home</a>
+       <a href="{% url 'products-page' %}">Products</a>
+       <a href="about.html">About</a>
+       <a href="client.html">Client</a>
+       <a href="contact.html">Contact</a>
+    </div>
+    <span class="toggle_icon" onclick="openNav()"><img src="{% static 'myapp/images/toggle-icon.png' %}"></span>
+    <a class="logo" href="index.html"><img src="{% static 'myapp/images/logo.png' %}"></a></a>
+    <form class="form-inline ">
+       <div class="login_text">
+          <ul>
+             <li><a href="{% url 'log-out-page' %}"><img src="{% static 'myapp/images/user-icon.png' %}"></a></li>
+             <li><a href="#"><img src="{% static 'myapp/images/bag-icon.png' %}"></a></li>
+             <li><a href="#"><img src="{% static 'myapp/images/search-icon.png' %}"></a></li>             
+          </ul>
+       </div>
+    </form>
+</nav>
+{% else %}
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <div id="mySidenav" class="sidenav">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+       <a href="index.html">Home</a>
+       <a href="products.html">Products</a>
+       <a href="about.html">About</a>
+       <a href="client.html">Client</a>
+       <a href="contact.html">Contact</a>
+       <a href="index.html">Logout</a>
+    </div>
+    <span class="toggle_icon" onclick="openNav()"><img src="{% static 'myapp/images/toggle-icon.png' %}"></span>
+    <a class="logo" href="index.html"><img src="{% static 'myapp/images/logo.png' %}"></a></a>
+    <form class="form-inline ">
+       <div class="login_text">
+          <ul>
+             <li><a href="{% url 'log-page' %}"><img src="{% static 'myapp/images/user-icon.png' %}"></a></li>
+             <li><a href="#"><img src="{% static 'myapp/images/bag-icon.png' %}"></a></li>
+             <li><a href="#"><img src="{% static 'myapp/images/search-icon.png' %}"></a></li>
+             
+             
+          </ul>
+       </div>
+    </form>
+</nav> 
+{% endif %}
