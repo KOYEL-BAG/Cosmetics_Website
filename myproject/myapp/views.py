@@ -34,7 +34,7 @@ def userReg(request):
                 messages.error(request, 'Registration is unsuccessful')
     else:
         form=MyRegFrm()
-    return render(request, 'myapp/reg.html',{'form':form})
+    return render(request, 'myapp/reg.html',{'form':form} )
 
 
 def userLog(request):
